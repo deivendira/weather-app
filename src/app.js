@@ -4,6 +4,7 @@ const geocode = require("./utilis/geocode");
 const forecast = require("./utilis/forecast");
 
 const express = require("express");
+const port = process.env.PORT || 3000;
 
 const app = express();
 const publicDirectoryPath = path.join(__dirname, "../public");
@@ -73,6 +74,6 @@ app.get("*", (req, res) => {
     errorMessage: "Page not found.",
   });
 });
-app.listen(3000, () => {
-  console.log("your server on");
+app.listen(port, () => {
+  console.log("your server on" + port);
 });
